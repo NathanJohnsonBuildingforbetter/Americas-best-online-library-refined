@@ -328,7 +328,7 @@ FEATURES
 .book__img {
   max-height: 380px;
   transition: all 300ms ease;
-  cursor: not-allowed;
+  cursor: pointer;
   /* Added after tutorial to maintain image aspect ratio */
   object-fit: contain;
   object-position: left;
@@ -352,8 +352,7 @@ FEATURES
 
 .book__title:hover {
   text-decoration: underline;
-  cursor: not-allowed;
-}
+  cursor: pointer;}
 
 .book__ratings {
   margin-bottom: 8px;
@@ -463,7 +462,7 @@ select {
   display: none !important;
 }
 .books__loading .books__loading--spinner{
-  display: block;
+  display: block !important;
 }
 
 .fa-spinner {

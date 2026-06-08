@@ -2,13 +2,18 @@
 
 // FAKE DATA
 
+let books;
+
 
 async function renderBooks(filter) {  
 // console.log( "renderBooks called");
    const booksWrapper = document.querySelector(".books");
     booksWrapper.classList.add("books__loading");
-    booksWrapper.classList.remove("books__loading");
-   const books = await getBooks();
+   if (!books) {
+     books = await getBooks();
+   }
+  //  const books = await getBooks();
+  booksWrapper.classList.remove("books__loading");
 
   
    if (filter === "low_to_high") {
@@ -52,6 +57,7 @@ async function renderBooks(filter) {
       </div>`
 }).join("");
 booksWrapper.innerHTML = booksHtml;
+
 // console.log(booksHtml);
   //  const books = getBooks();
   //  console.log(books);
@@ -111,7 +117,7 @@ setTimeout(() => {
   console.log( "setTimeout called");
   renderBooks();
 },);
-renderBooks();
+
 
 function getBooks() {
   return new Promise((resolve) => {
