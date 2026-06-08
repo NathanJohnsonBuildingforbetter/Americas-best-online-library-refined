@@ -6,7 +6,8 @@
 async function renderBooks(filter) {  
 // console.log( "renderBooks called");
    const booksWrapper = document.querySelector(".books");
-    booksWrapper.classList += "books__loading";
+    booksWrapper.classList.add("books__loading");
+    booksWrapper.classList.remove("books__loading");
    const books = await getBooks();
 
   
